@@ -1,13 +1,13 @@
 # EOSC
 
-EOSC is a command line tool that can be used to interact with EOS node (EOSD). It is can be found inside ./programs/eosc/eosc and it is built together when you built EOSD.
+EOSC is a command line tool that can be used to interact with an EOS node (started by by the launcher EOSD). It is can be found inside the eos repository at https://github.com/EOSIO/eos/tree/master/programs/eosc. It is automatically built during the build process of EOSD.
 
-Currently EOSC only supports communicating with EOSD that is running on localhost port 8888. It talks with EOSD through RPC over HTTP, therefore it's important that the EOSD it talks to has its chain_api_plugin enabled. To enable the chain_api_plugin on EOSD, add the following line to data_dir/config.ini of EOSD:
+Currently EOSC only supports communicating with EOSD when running on localhost port 8888. It communicates with EOSD through RPC over HTTP, therefore it's important that the node that is being communicated with has the chain_api_plugin enabled. To enable the chain_api_plugin on a node using EOSD, add the following line to data_dir/config.ini of EOSD:
 ```
 plugin = eos::chain_api_plugin
 ```
 
-By 24 August 2017 EOS Master Branch, here is the list of commands available for EOSC:
+Below is the full list of commands available for EOSC, according the status of August 24th 2017 EOS Master Branch, 
 - [help](#help)
 - [info](#info)
 - [block](#block)
@@ -57,7 +57,7 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
       ```
 ---
 ## block
-- Description: get a block information from blockchain
+- Description: get information about the specified block from the blockchain
 - Arguments:
   ```
     eosc block <block_num_or_id>
@@ -168,7 +168,7 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
 ---
 ## create
   ### create key
-  - Description: create public and private key pair (which can be used to create new account later on)
+  - Description: create a public and private key pair (which is necessary in order to create a new account later on)
   - Example:
       ```
       eosc create key
@@ -185,7 +185,7 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
     ```
       eosc create account <creator> <new_account_name> <owner_public_key> <active_public_key>
     ```
-    - creator: account name of the one who create the account (i.e. the one who pay for the account creation)
+    - creator: account name of the account that creates the new account (i.e. the one who pays for the account creation)
     - new_account_name: name of the account to be created
     - owner_public_key: owner public key of the account to be created
     - active_public_key: active public key of the account to be created
@@ -254,12 +254,12 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
   - **NOT IMPLEMENTED YET**
 ---
 ## transaction
-- Description: get a transaction information from blockchain
+- Description: get information of the specified transaction ID from the blockchain
 - Arguments:
   ```
     eosc transaction <transaction_id>
   ```
-  - transaction_id: transaction id of the block you want to query
+  - transaction_id: transaction id of the block to be queried
 - Example:
     ```
     eosc transaction 52b488d27ce1f72a2b29f22e5e1638fa5db5d7805565884e795733a15c6c2195
@@ -372,7 +372,7 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
 ---
 ## setcode
 - **SIGNING TRANSACTION IS NOT SUPPORTED YET**
-- Description: create and publish a contract (note that an account under the contract_name need to be created first)
+- Description: create and publish a contract (note that the account in the contract_name field needs to be created first)
 - Arguments:
   ```
     eosc setcode <contract_name> <contract_wast_path> <contract_abi_path>
@@ -426,7 +426,7 @@ By 24 August 2017 EOS Master Branch, here is the list of commands available for 
     eosc exec <contract_name> <action_name> <action_arguments> <scope> <permission>
   ```
   - contract_name: name of the contract
-  - action_name: name of the contract's action that you want to execute
+  - action_name: name of the contract's action to be executed
   - action_arguments: arguments for the contract's action
   - scope: array of account names that are involved in the contract's action
   - permission: the accounts and permission levels provided
