@@ -1,6 +1,6 @@
 # EOSC
 
-EOSC is a command line tool that can be used to interact with an EOS node (started by by the launcher EOSD). It is can be found inside the eos repository at https://github.com/EOSIO/eos/tree/master/programs/eosc. It is automatically built during the build process of EOSD.
+EOSC is a command line tool that can be used to interact with an EOS node (EOSD). It is can be found inside the eos repository at https://github.com/EOSIO/eos/tree/master/programs/eosc. It is automatically built during the build process of EOSD.
 
 Currently EOSC only supports communicating with EOSD when running on localhost port 8888. It communicates with EOSD through RPC over HTTP, therefore it's important that the node that is being communicated with has the chain_api_plugin enabled. 
 
