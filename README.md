@@ -2,12 +2,14 @@
 
 EOSC is a command line tool that can be used to interact with an EOS node (started by by the launcher EOSD). It is can be found inside the eos repository at https://github.com/EOSIO/eos/tree/master/programs/eosc. It is automatically built during the build process of EOSD.
 
-Currently EOSC only supports communicating with EOSD when running on localhost port 8888. It communicates with EOSD through RPC over HTTP, therefore it's important that the node that is being communicated with has the chain_api_plugin enabled. To enable the chain_api_plugin on a node using EOSD, add the following line to data_dir/config.ini of EOSD:
+Currently EOSC only supports communicating with EOSD when running on localhost port 8888. It communicates with EOSD through RPC over HTTP, therefore it's important that the node that is being communicated with has the chain_api_plugin enabled. 
+
+To enable the chain_api_plugin on a node using EOSD, add the following line needs to be added to the data_dir/config.ini initialisation file of EOSD:
 ```
 plugin = eos::chain_api_plugin
 ```
 
-Below is the full list of commands available for EOSC, according the status of August 24th 2017 EOS Master Branch, 
+Below is the full list of commands available for command line tool (EOSC), according the status of August 24th 2017 EOS Master Branch, 
 - [help](#help)
 - [info](#info)
 - [block](#block)
@@ -62,7 +64,7 @@ Below is the full list of commands available for EOSC, according the status of A
   ```
     eosc block <block_num_or_id>
   ```
-  - block_num_or_id: block number or block id of the block you want to query
+  - block_num_or_id: block number or block id of the block to be queried
 - Example:
     ```
     eosc block 21
@@ -90,7 +92,7 @@ Below is the full list of commands available for EOSC, according the status of A
   ```
     eosc account <account_name>
   ```
-  - account_name: name of the account that you want to query
+  - account_name: name of the account to be queried
 - Example:
     ```
     eosc account inita
