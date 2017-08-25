@@ -62,13 +62,13 @@ Below is the full list of commands available for command line tool (EOSC), accor
 - Description: get information about the specified block from the blockchain
 - Arguments:
   ```
-    eosc block <block_num_or_id>
+  eosc block <block_num_or_id>
   ```
-  - block_num_or_id: block number or block id of the block to be queried
+  - **block_num_or_id**: block number or block id of the block to be queried
 - Example:
     ```
     eosc block 21
-    # or ./eosc block 000000155e9d9af7774c8dc50ecb7fed3320811b660027e73a58ddeaeaa42096
+    # or eosc block 000000155e9d9af7774c8dc50ecb7fed3320811b660027e73a58ddeaeaa42096
     ```
     - Result:
       ```
@@ -92,7 +92,7 @@ Below is the full list of commands available for command line tool (EOSC), accor
   ```
     eosc account <account_name>
   ```
-  - account_name: name of the account to be queried
+  - **account_name**: name of the account to be queried
 - Example:
     ```
     eosc account inita
@@ -112,11 +112,11 @@ Below is the full list of commands available for command line tool (EOSC), accor
   - Description: transfer eos from one account to another account
   - Arguments:
     ```
-      eosc transfer <sender_name> <recipient_name> <amount>
+    eosc transfer <sender_name> <recipient_name> <amount>
     ```
-    - sender_name: account name of the sender
-    - recipient_name: account name of the recipient
-    - amount: amount of eos to be transferred
+    - **sender_name**: account name of the sender
+    - **recipient_name**: account name of the recipient
+    - **amount**: amount of eos to be transferred
   - Example:
       ```
       eosc transfer eos tester 1000
@@ -185,12 +185,12 @@ Below is the full list of commands available for command line tool (EOSC), accor
   - Description: create a new account
   - Arguments:
     ```
-      eosc create account <creator> <new_account_name> <owner_public_key> <active_public_key>
+    eosc create account <creator> <new_account_name> <owner_public_key> <active_public_key>
     ```
-    - creator: account name of the account that creates the new account (i.e. the one who pays for the account creation)
-    - new_account_name: name of the account to be created
-    - owner_public_key: owner public key of the account to be created
-    - active_public_key: active public key of the account to be created
+    - **creator**: account name of the account that creates the new account (i.e. the one who pays for the account creation)
+    - **new_account_name**: name of the account to be created
+    - **owner_public_key**: owner public key of the account to be created
+    - **active_public_key**: active public key of the account to be created
   - Example:
       ```
       eosc create account inita tester EOS4toFS3YXEQCkuuw1aqDLrtHim86Gz9u3hBdcBw5KNPZcursVHq EOS6KdkmwhPyc2wxN9SAFwo2PU2h74nWs7urN1uRduAwkcns2uXsa
@@ -234,9 +234,9 @@ Below is the full list of commands available for command line tool (EOSC), accor
   - Description: generate public key from given private key
   - Arguments:
     ```
-      eosc import key <private_key>
+    eosc import key <private_key>
     ```
-    - private_key: private key of the public key to be generated
+    - **private_key**: private key of the public key to be generated
   - Example:
       ```
       eosc import key 5KPK5niqgE5pXsKkYn8zgtRnL5BFmPMp4nv8sNSdTMyZQiuhxzE
@@ -259,9 +259,9 @@ Below is the full list of commands available for command line tool (EOSC), accor
 - Description: get information of the specified transaction ID from the blockchain
 - Arguments:
   ```
-    eosc transaction <transaction_id>
+  eosc transaction <transaction_id>
   ```
-  - transaction_id: transaction id of the block to be queried
+  - **transaction_id**: transaction id of the block to be queried
 - Example:
     ```
     eosc transaction 52b488d27ce1f72a2b29f22e5e1638fa5db5d7805565884e795733a15c6c2195
@@ -318,9 +318,9 @@ Below is the full list of commands available for command line tool (EOSC), accor
 - Description: push a transaction
 - Arguments:
   ```
-    eosc push-trx <transaction_json_string>
+  eosc push-trx <transaction_json_string>
   ```
-  - transaction_json_string: transaction in json string format
+  - **transaction_json_string**: transaction in json string format
 - Example:
     ```
       eosc push-trx "{"refBlockNum":"25298","refBlockPrefix":"1151709320","expiration":"2017-07-25T17:58:58","scope":["eos","tester"],"messages":[{"code":"eos","type":"transfer","authorization":[{"account":"eos","permission":"active"}],"data":"000000000000e62b00000000c84267a1e803000000000000"}],"signatures":[],"authorizations":[]}"
@@ -377,11 +377,11 @@ Below is the full list of commands available for command line tool (EOSC), accor
 - Description: create and publish a contract (note that the account in the contract_name field needs to be created first)
 - Arguments:
   ```
-    eosc setcode <contract_name> <contract_wast_path> <contract_abi_path>
+  eosc setcode <contract_name> <contract_wast_path> <contract_abi_path>
   ```
-  - contract_name: name of the contract
-  - contract_wast_path: path to contract wast file
-  - contract_abi_path: path to contract abi file
+  - **contract_name**: name of the contract
+  - **contract_wast_path**: path to contract wast file
+  - **contract_abi_path**: path to contract abi file
 - Example:
     ```
       eosc setcode currency ../../contracts/currency/currency.wast ../../contracts/currency/currency.abi
@@ -425,13 +425,13 @@ Below is the full list of commands available for command line tool (EOSC), accor
 - Description: execute a contract's action
 - Arguments:
   ```
-    eosc exec <contract_name> <action_name> <action_arguments> <scope> <permission>
+  eosc exec <contract_name> <action_name> <action_arguments> <scope> <permission>
   ```
-  - contract_name: name of the contract
-  - action_name: name of the contract's action to be executed
-  - action_arguments: arguments for the contract's action
-  - scope: array of account names that are involved in the contract's action
-  - permission: the accounts and permission levels provided
+  - **contract_name**: name of the contract
+  - **action_name**: name of the contract's action to be executed
+  - **action_arguments**: arguments for the contract's action
+  - **scope**: array of account names that are involved in the contract's action
+  - **permission**: the accounts and permission levels provided
 - Example:
     ```
       eosc exec currency transfer '{"from":"currency","to":"tester","amount":50}' '["currency","tester"]' '[{"account":"currency","permission":"active"}]'
